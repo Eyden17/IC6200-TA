@@ -1,0 +1,11 @@
+[tool.pytest.ini_options]
+pythonpath = ["."]
+addopts = "--cov=. --cov-report=term-missing"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+omit = ["tests/*", "main.py"]
+
+[tool.coverage.report]
+fail_under = 80  # Fail CI if coverage drops below 80%
+

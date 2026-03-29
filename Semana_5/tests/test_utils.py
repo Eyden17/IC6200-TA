@@ -91,6 +91,18 @@ def test_is_free_to_mark_occupied_o():
     assert is_free_to_mark(board, (2, 2)) is False
 
 
+def test_is_free_to_mark_coordinates_are_x_y_not_y_x():
+    """Test: movement tuple uses (x, y), not (y, x)."""
+    board = [
+        [None, "X", None],
+        [None, None, None],
+        [None, None, None],
+    ]
+
+    assert is_free_to_mark(board, (1, 0)) is False
+    assert is_free_to_mark(board, (0, 1)) is True
+
+
 def test_players_x_to_move():
     """Test: X has equal marks as O - X plays next"""
     board = [

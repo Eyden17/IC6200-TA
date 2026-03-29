@@ -1,60 +1,36 @@
-# Minimax Tic-Tac-Toe
+# Semana 5: Minimax (Tic-Tac-Toe)
 
-A Tic-Tac-Toe AI implementation using the Minimax algorithm. The AI plays optimally and will never lose.
+## Descripción del algoritmo
 
-## Functions
+En esta semana se implementa **Minimax** para jugar Tic-Tac-Toe de forma óptima.
 
-### utils.py
+- El tablero es una matriz 3x3 con `"X"`, `"O"` o `None`.
+- `max_value(board)` busca maximizar la utilidad para **X**.
+- `min_value(board)` busca minimizar la utilidad para **O**.
+- `utility(board)` evalúa estados terminales:
+  - `1` si gana X
+  - `-1` si gana O
+  - `0` si hay empate
+- `ai_play(board)` selecciona la mejor jugada posible según el turno.
 
-- `is_free_to_mark(board, movement)` - Checks if a position is available
-- `players(board)` - Returns which player moves next (X or O)
-- `actions(board)` - Returns all available moves
-- `result(board, action)` - Returns the board after taking an action
-- `terminal(board)` - Checks if the game is over
-- `utility(board, player)` - Returns the score for a terminal state (+1 win, -1 loss, 0 draw)
+## Instrucciones de instalación
 
-### minimax.py
-
-- `min_value(board, player)` - Minimax function that minimizes the maximum value
-- `max_value(board, player)` - Minimax function that maximizes the minimum value
-
-## Installation
-
-Install the required dependencies:
+Desde la carpeta `Semana_5`:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Testing
+## Instrucciones de ejecución
 
-Run all tests:
+Desde `Semana_5`, ejecutar el ejemplo:
+
+```bash
+python main.py
+```
+
+Para correr las pruebas:
 
 ```bash
 pytest
-```
-
-Run a specific test file:
-
-```bash
-pytest tests/test_utils.py
-pytest tests/test_minimax.py
-```
-
-Run a specific test function:
-
-```bash
-pytest tests/test_utils.py::test_function_name
-```
-
-Run tests matching a pattern:
-
-```bash
-pytest -k "test_name"
-```
-
-Run without coverage (faster):
-
-```bash
-pytest --no-cov
 ```
